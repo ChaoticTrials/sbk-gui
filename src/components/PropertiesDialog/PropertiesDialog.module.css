@@ -1,0 +1,53 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+}
+.dialog {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--spacing-lg);
+  min-width: 340px;
+}
+.dialog h3 {
+  margin-bottom: var(--spacing-sm);
+}
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin-bottom: var(--spacing-md);
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-md);
+}
+.table th {
+  text-align: right;
+  padding: 3px 12px 3px 0;
+  color: var(--color-text-muted);
+  font-weight: normal;
+  white-space: nowrap;
+  font-size: 12px;
+  width: 80px;
+}
+.table td {
+  padding: 3px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  word-break: break-all;
+}
+.dirNote {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  margin-bottom: var(--spacing-md);
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <path d="M6 2h8l4 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" fill="#888899"/>
+  <path d="M14 2l4 4h-4V2z" fill="#555566"/>
+
+  <!-- label -->
+  <rect x="4" y="15" width="14" height="4" fill="#4c4c4c"/>
+  <text x="15.5" y="18.5" text-anchor="end" font-size="4" fill="white" font-family="sans-serif">RAW</text>
+</svg>

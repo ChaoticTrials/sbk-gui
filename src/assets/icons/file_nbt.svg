@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <path d="M6 2h8l4 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" fill="#D97B2A"/>
+  <path d="M14 2l4 4h-4V2z" fill="#8B4A0A"/>
+
+  <!-- lines -->
+  <path d="M7 8h8M7 10.5h8M7 13h4"
+        stroke="#E5E7EB"
+        stroke-width="1"
+        stroke-linecap="round"/>
+
+  <!-- label -->
+  <rect x="4" y="15" width="14" height="4" fill="#4A7FBF"/>
+  <text x="15" y="18.5" text-anchor="end" font-size="4" fill="white" font-family="sans-serif">DAT</text>
+</svg>

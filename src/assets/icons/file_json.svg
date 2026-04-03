@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+    <path d="M6 2h8l4 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" fill="#3AAD6A"/>
+    <path d="M14 2l4 4h-4V2z" fill="#1A6B3A"/>
+
+    <!-- braces -->
+    <path d="m 9.829635,7.0502886 c -0.7875323,0 -0.7875323,0.8794103 -0.7875323,0.8794103 v 0.8794102 c 0,1.7588209 -1.5750646,1.7588209 -1.5750646,1.7588209 0,0 1.5750646,0 1.5750646,1.75882 v 0.879411 c 0,0 0,0.87941 0.7875323,0.87941"
+          stroke="#e5e7eb"
+          stroke-width="0.832205"
+          stroke-linecap="round"
+    />
+    <path d="m 12.192232,7.0502886 c 0.787532,0 0.787532,0.8794103 0.787532,0.8794103 v 0.8794102 c 0,1.7588209 1.575065,1.7588209 1.575065,1.7588209 0,0 -1.575065,0 -1.575065,1.75882 v 0.879411 c 0,0 0,0.87941 -0.787532,0.87941"
+          stroke="#e5e7eb"
+          stroke-width="0.832205"
+          stroke-linecap="round"
+    />
+
+    <!-- label -->
+    <rect x="4" y="15" width="14" height="4" fill="#4A7FBF"/>
+    <text x="16.5" y="18.5" text-anchor="end" font-size="4" fill="white" font-family="sans-serif">JSON</text>
+</svg>

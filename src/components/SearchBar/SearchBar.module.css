@@ -1,0 +1,22 @@
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+.searchBar input[type="text"],
+.searchBar input:not([type="checkbox"]):not([type]) {
+  flex: 1;
+}
+.globalToggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}

@@ -1,0 +1,19 @@
+:root {
+  --color-bg: #1e1e2e;
+  --color-surface: #27273a;
+  --color-border: #393952;
+  --color-text: #cdd6f4;
+  --color-text-muted: #6c7086;
+  --color-accent: #89b4fa;
+  --color-selected: #313244;
+  --color-hover: #2a2a3e;
+  --color-danger: #f38ba8;
+  --color-success: #a6e3a1;
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --radius: 4px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+}

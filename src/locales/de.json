@@ -1,0 +1,79 @@
+{
+  "appName": "SBK Archiv-Betrachter",
+  "aboutDesc": "Archivbetrachter für .sbk-Dateien.",
+
+  "close": "Schließen",
+  "cancel": "Abbrechen",
+  "apply": "Anwenden",
+  "error": "Fehler",
+  "copyVersions": "Versionen kopieren",
+  "copied": "Kopiert!",
+
+  "settings": "Einstellungen",
+  "about": "\u00dcber",
+  "openArchive": "Archiv \u00f6ffnen\u2026",
+  "closeArchive": "Archiv schlie\u00dfen",
+  "menu": "Men\u00fc",
+
+  "dropHint": ".sbk-Datei hierher ziehen",
+  "dropOr": "oder",
+
+  "back": "Zur\u00fcck",
+  "forward": "Vorw\u00e4rts",
+  "up": "Nach oben",
+  "search": "Suchen",
+  "coordSearch": "Koordinatensuche",
+
+  "filterByName": "Nach Name filtern\u2026",
+  "searchWholeArchive": "Ganzes Archiv durchsuchen",
+
+  "regionSearch": "Regionssuche",
+  "regionSearchDesc": ".mca-Dateien nach Blockkoordinaten filtern",
+  "range": "Bereich",
+  "blockX": "Block X",
+  "blockZ": "Block Z",
+  "xMax": "X max",
+  "zMax": "Z max",
+
+  "colName": "Name",
+  "colPath": "Pfad",
+  "colType": "Typ",
+  "colSize": "Gr\u00f6\u00dfe",
+  "colModified": "Ge\u00e4ndert",
+  "colCoords": "Koordinaten",
+  "noFiles": "Keine Dateien",
+
+  "extractSelected": "Auswahl extrahieren\u2026",
+  "quickExtract": "Schnell extrahieren",
+  "extractAll": "Alles extrahieren\u2026",
+  "openInApp": "In App \u00f6ffnen",
+  "copyPath": "Pfad kopieren",
+  "properties": "Eigenschaften",
+
+  "extracting": "Extrahiere\u2026",
+  "decompressing": "Dekomprimiere",
+  "writing": "Schreibe",
+  "extractedFiles": "{n} Dateien extrahiert",
+  "openFolder": "Ordner \u00f6ffnen",
+
+  "prettifyJson": "Extrahierte JSON-Dateien formatieren",
+  "flatExtract": "Relativ zum aktuellen Ordner extrahieren (Pfad k\u00fcrzen)",
+  "extractionThreads": "Extraktions-Threads",
+  "uiScale": "Oberfl\u00e4chengr\u00f6\u00dfe",
+  "resetDefaults": "Standardwerte wiederherstellen",
+  "openSettingsFolder": "Einstellungsordner \u00f6ffnen",
+  "autoThreads": "Auto ({n})",
+
+  "propertiesTitle": "Eigenschaften",
+  "propPath": "Pfad",
+  "propType": "Typ",
+  "propSize": "Gr\u00f6\u00dfe",
+  "propModified": "Ge\u00e4ndert",
+  "propGroupId": "Gruppen-ID",
+  "propItems": "Elemente",
+
+  "verifyTitle": "Archiv pr\u00fcfen",
+  "verifyRunning": "Pr\u00fcfsummen werden \u00fcberpr\u00fcft\u2026",
+  "verifyOk": "\u2713 Alle Pr\u00fcfsummen korrekt.",
+  "verifyFail": "\u2717 Pr\u00fcfsummen-Fehler \u2014 Archiv m\u00f6glicherweise besch\u00e4digt."
+}

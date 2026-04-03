@@ -1,0 +1,49 @@
+.tableWrapper {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* needed for rubber band absolute positioning */
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  min-width: max-content;
+  flex: 1;
+}
+.headerRow {
+  display: grid;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.body {
+  flex: 1;
+  overflow: auto;
+}
+.empty {
+  padding: var(--spacing-lg);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+.rubberBand {
+  position: absolute;
+  border: 1px solid var(--color-accent);
+  background: rgba(137, 180, 250, 0.12);
+  pointer-events: none;
+  z-index: 2;
+}
+.coordsHeader {
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid var(--color-border);
+  user-select: none;
+  position: relative;
+}

@@ -1,0 +1,63 @@
+.row {
+  display: grid;
+  align-items: center;
+  height: 28px;
+  cursor: default;
+  border-bottom: 1px solid transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.row:hover {
+  background: var(--color-hover);
+}
+.selected {
+  background: var(--color-selected) !important;
+}
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cell {
+  padding: 3px 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+.right {
+  text-align: right;
+}
+.coords {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 3px;
+  align-content: center;
+  overflow: hidden;
+}
+.axisLabel {
+  color: var(--color-text-muted);
+}
+.coordVal {
+  text-align: right;
+}
+.coordSep {
+  text-align: center;
+}

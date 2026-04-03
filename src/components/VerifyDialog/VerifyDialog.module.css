@@ -1,0 +1,38 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 600;
+}
+.dialog {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--spacing-lg);
+  min-width: 280px;
+}
+.dialog h3 {
+  margin-bottom: var(--spacing-md);
+}
+.running {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+}
+.ok {
+  font-size: 13px;
+  color: var(--color-success, #4caf50);
+  margin-bottom: var(--spacing-md);
+}
+.fail {
+  font-size: 13px;
+  color: var(--color-error, #f44336);
+  margin-bottom: var(--spacing-md);
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,79 @@
+{
+  "appName": "SBK Archive Viewer",
+  "aboutDesc": "Archive browser for .sbk files.",
+
+  "close": "Close",
+  "cancel": "Cancel",
+  "apply": "Apply",
+  "error": "Error",
+  "copyVersions": "Copy versions",
+  "copied": "Copied!",
+
+  "settings": "Settings",
+  "about": "About",
+  "openArchive": "Open Archive\u2026",
+  "closeArchive": "Close Archive",
+  "menu": "Menu",
+
+  "dropHint": "Drop an .sbk file here",
+  "dropOr": "or",
+
+  "back": "Back",
+  "forward": "Forward",
+  "up": "Up",
+  "search": "Search",
+  "coordSearch": "Coordinate search",
+
+  "filterByName": "Filter by name\u2026",
+  "searchWholeArchive": "Search whole archive",
+
+  "regionSearch": "Region Search",
+  "regionSearchDesc": "Filter .mca files by block coordinates",
+  "range": "Range",
+  "blockX": "Block X",
+  "blockZ": "Block Z",
+  "xMax": "X max",
+  "zMax": "Z max",
+
+  "colName": "Name",
+  "colPath": "Path",
+  "colType": "Type",
+  "colSize": "Size",
+  "colModified": "Modified",
+  "colCoords": "Coordinates",
+  "noFiles": "No files",
+
+  "extractSelected": "Extract Selected\u2026",
+  "quickExtract": "Quick Extract",
+  "extractAll": "Extract All\u2026",
+  "openInApp": "Open in App",
+  "copyPath": "Copy Path",
+  "properties": "Properties",
+
+  "extracting": "Extracting\u2026",
+  "decompressing": "Decompressing",
+  "writing": "Writing",
+  "extractedFiles": "Extracted {n} files",
+  "openFolder": "Open Folder",
+
+  "prettifyJson": "Prettify extracted JSON files",
+  "flatExtract": "Extract relative to current folder (strip path prefix)",
+  "extractionThreads": "Extraction threads",
+  "uiScale": "UI Scale",
+  "resetDefaults": "Reset to defaults",
+  "openSettingsFolder": "Open settings folder",
+  "autoThreads": "Auto ({n})",
+
+  "propertiesTitle": "Properties",
+  "propPath": "Path",
+  "propType": "Type",
+  "propSize": "Size",
+  "propModified": "Modified",
+  "propGroupId": "Group ID",
+  "propItems": "Items",
+
+  "verifyTitle": "Verify Archive",
+  "verifyRunning": "Verifying checksums\u2026",
+  "verifyOk": "\u2713 All checksums passed.",
+  "verifyFail": "\u2717 Checksum mismatch \u2014 archive may be corrupt."
+}

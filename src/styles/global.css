@@ -1,0 +1,75 @@
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  zoom: var(--ui-scale, 1);
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+button {
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius);
+  padding: 4px 10px;
+  font-size: 12px;
+}
+button:hover {
+  background: var(--color-hover);
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+input[type="text"],
+input:not([type]) {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: var(--radius);
+  padding: 4px 8px;
+  font-size: 13px;
+  outline: none;
+}
+input:focus {
+  border-color: var(--color-accent);
+}
+input[type="number"] {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: var(--radius);
+  padding: 4px 8px;
+  font-size: 13px;
+  outline: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+input[type="number"]:focus {
+  border-color: var(--color-accent);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}

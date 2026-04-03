@@ -1,0 +1,88 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+}
+.dialog {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--spacing-lg);
+  min-width: 300px;
+  /* Counter-scale so the dialog always renders at its natural size during live preview */
+  zoom: calc(1 / var(--ui-scale, 1));
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+}
+.header h3 {
+  margin: 0;
+}
+.closeBtn {
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 16px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.closeBtn:hover {
+  color: var(--color-text);
+  background: transparent;
+}
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin-bottom: var(--spacing-md);
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  margin-bottom: var(--spacing-md);
+}
+.sliderOption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: var(--spacing-md);
+  cursor: default;
+}
+.sliderRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+.slider {
+  flex: 1;
+  min-width: 0;
+}
+.scaleValue {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  min-width: 60px;
+  text-align: right;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-md);
+  gap: var(--spacing-sm);
+}
+.footerRight {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+.resetBtn {
+  color: var(--color-text-muted);
+}

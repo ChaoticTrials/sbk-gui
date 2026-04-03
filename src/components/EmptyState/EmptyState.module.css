@@ -1,0 +1,37 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: var(--spacing-md);
+  border: 2px dashed transparent;
+  border-radius: var(--radius);
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+.menuBar {
+  position: absolute;
+  top: var(--spacing-xs);
+  right: var(--spacing-xs);
+}
+.highlight {
+  border-color: var(--color-accent);
+  background: rgba(137, 180, 250, 0.05);
+}
+.icon {
+  font-size: 48px;
+}
+.hint {
+  color: var(--color-text-muted);
+}
+.or {
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+.openBtn {
+  padding: 8px 20px;
+  font-size: 13px;
+}

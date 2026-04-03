@@ -1,0 +1,13 @@
+.handle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  cursor: col-resize;
+  z-index: 2;
+}
+.handle:hover {
+  background: var(--color-accent);
+  opacity: 0.5;
+}
