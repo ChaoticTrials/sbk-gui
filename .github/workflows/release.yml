@@ -16,12 +16,13 @@ jobs:
         include:
           - platform: ubuntu-22.04
             args: ''
+            rust_targets: ''
           - platform: windows-latest
             args: ''
+            rust_targets: ''
           - platform: macos-latest
-            args: '--target aarch64-apple-darwin'
-          - platform: macos-13
-            args: '--target x86_64-apple-darwin'
+            args: '--target universal-apple-darwin'
+            rust_targets: 'aarch64-apple-darwin,x86_64-apple-darwin'
 
     runs-on: ${{ matrix.platform }}
 
@@ -37,7 +38,7 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: aarch64-apple-darwin
+          targets: ${{ matrix.rust_targets }}
 
       - name: Install Linux system deps
         if: matrix.platform == 'ubuntu-22.04'
@@ -58,7 +59,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tagName:      v__VERSION__
+          tagName:      ${{ github.ref_name }}
           releaseName:  "SBK Archive Viewer v__VERSION__"
           releaseBody:  ''
           releaseDraft: false
@@ -102,7 +103,7 @@ jobs:
           echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
 
       - name: Download .deb from release
-        run: gh release download ${{ github.ref_name }} --pattern "*.deb" --dir debs
+        run: gh release download ${{ github.ref_name }} --repo ${{ github.repository }} --pattern "*.deb" --dir debs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
