@@ -1,5 +1,5 @@
 {
-  "productName": "SBK Archive Viewer",
+  "productName": "SBK GUI",
   "identifier": "de.chaotictrials.sbk-gui",
   "build": {
     "beforeDevCommand": "npm run dev",

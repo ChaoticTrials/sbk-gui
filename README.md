@@ -21,9 +21,9 @@ A desktop archive browser for `.sbk` files. Lets you browse, search, and extract
 
 ```bash
 curl -fsSL https://repo.chaotictrials.de/apt-keyring.gpg \
-  | sudo tee /usr/share/keyrings/chaotictrials-keyring.gpg > /dev/null
-echo "deb [signed-by=/usr/share/keyrings/chaotictrials-keyring.gpg] https://repo.chaotictrials.de/sbk-gui stable main" \
-  | sudo tee /etc/apt/sources.list.d/chaotictrials-sbk-gui.list
+  | sudo tee /usr/share/keyrings/chaotictrials.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/chaotictrials.gpg] https://repo.chaotictrials.de/ stable main" \
+  | sudo tee /etc/apt/sources.list.d/chaotictrials.list
 sudo apt update
 sudo apt install sbk-gui
 ```
