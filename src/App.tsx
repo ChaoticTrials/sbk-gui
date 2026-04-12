@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { invoke } from "@tauri-apps/api/core";
 import { useArchiveStore } from "./store/useArchiveStore";
 import { useSettingsStore } from "./store/useSettingsStore";
 import { EmptyState } from "./components/EmptyState/EmptyState";
@@ -17,6 +18,9 @@ export default function App() {
 
   useEffect(() => {
     loadSettings();
+    invoke<string | null>("get_cli_path").then((path) => {
+      if (path) useArchiveStore.getState().openArchive(path);
+    });
   }, []);
 
   // Apply zoom via CSS variable on html element

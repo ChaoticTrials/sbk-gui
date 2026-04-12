@@ -21,6 +21,7 @@ pub fn run() {
             commands::cancel::cancel_extraction,
             commands::system::get_cpu_count,
             commands::system::get_version_info,
+            commands::system::get_cli_path,
             commands::verify::verify_archive,
         ])
         .run(tauri::generate_context!())
