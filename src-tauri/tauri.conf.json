@@ -27,6 +27,7 @@
     "linux": {
       "deb": {
         "depends": ["sbk"],
+        "desktopTemplate": "assets/sbk-gui.desktop",
         "files": {
           "/usr/share/nemo/actions/sbk-extract-here.nemo_action": "assets/sbk-extract-here.nemo_action"
         }
