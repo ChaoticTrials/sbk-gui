@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-sbk">
+    <comment>SBK Archive</comment>
+    <comment xml:lang="de">SBK-Archiv</comment>
+    <glob pattern="*.sbk"/>
+    <icon name="application-x-sbk"/>
+    <generic-icon name="application-x-generic"/>
+  </mime-type>
+</mime-info>

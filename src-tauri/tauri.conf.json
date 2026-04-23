@@ -24,13 +24,29 @@
   "bundle": {
     "active": true,
     "targets": "all",
+    "fileAssociations": [
+      {
+        "ext": ["sbk"],
+        "name": "SBK Archive",
+        "description": "SBK archive file",
+        "mimeType": "application/x-sbk"
+      }
+    ],
     "linux": {
       "deb": {
         "depends": ["sbk"],
         "desktopTemplate": "assets/sbk-gui.desktop",
         "files": {
-          "/usr/share/nemo/actions/sbk-extract-here.nemo_action": "assets/sbk-extract-here.nemo_action"
-        }
+          "/usr/share/nemo/actions/sbk-extract-here.nemo_action": "assets/sbk-extract-here.nemo_action",
+          "/usr/share/mime/packages/application-x-sbk.xml": "assets/application-x-sbk.xml",
+          "/usr/share/icons/hicolor/32x32/mimetypes/application-x-sbk.png": "icons/32x32.png",
+          "/usr/share/icons/hicolor/64x64/mimetypes/application-x-sbk.png": "icons/64x64.png",
+          "/usr/share/icons/hicolor/128x128/mimetypes/application-x-sbk.png": "icons/128x128.png",
+          "/usr/share/icons/hicolor/256x256/mimetypes/application-x-sbk.png": "icons/128x128@2x.png",
+          "/usr/share/icons/hicolor/scalable/mimetypes/application-x-sbk.svg": "assets/application-x-sbk.svg"
+        },
+        "postInstallScript": "assets/deb-postinst.sh",
+        "postRemoveScript": "assets/deb-postrm.sh"
       }
     },
     "icon": [
