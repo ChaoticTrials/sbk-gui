@@ -49,6 +49,7 @@ export interface ExtractDialogState {
 export interface ContextMenuState {
   x: number;
   y: number;
+  emptyArea?: boolean;
 }
 
 export type VerifyState = "running" | { ok: boolean } | { error: string };

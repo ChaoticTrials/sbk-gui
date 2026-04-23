@@ -15,6 +15,7 @@ export function ContextMenu() {
   const { contextMenu, setContextMenu, setExtractDialog, setPropertiesEntry, setError } = useUiStore();
   const { uiScale } = useSettingsStore();
   const selected = useSelectionStore((s) => s.selected);
+  const currentPath = useNavStore((s) => s.currentPath);
   const entries = useArchiveStore((s) => s.entries);
   const info = useArchiveStore((s) => s.info);
   const prettifyJson = useSettingsStore((s) => s.prettifyJson);
@@ -146,31 +147,55 @@ export function ContextMenu() {
     }
   }
 
-  async function handleCopyPath() {
+  const emptyArea = contextMenu.emptyArea ?? false;
+
+  async function handleCopyPathOrDir() {
     setContextMenu(null);
-    await navigator.clipboard.writeText(selectedPaths.join("\n"));
+    if (emptyArea) {
+      await navigator.clipboard.writeText(currentPath.join("/") || "/");
+    } else {
+      await navigator.clipboard.writeText(selectedPaths.join("\n"));
+    }
   }
 
-  function handleProperties() {
+  function handlePropertiesOrDir() {
     setContextMenu(null);
-    if (selectedPaths[0]) setPropertiesEntry(selectedPaths[0]);
+    if (emptyArea) {
+      setPropertiesEntry(currentPath.join("/"));
+    } else if (selectedPaths[0]) {
+      setPropertiesEntry(selectedPaths[0]);
+    }
   }
 
   return createPortal(
     <div ref={menuRef} className={styles.menu} style={{ left: adjustedPos.x, top: adjustedPos.y }}>
-      {selected.size > 0 && <button onClick={handleExtractSelected}>{t("extractSelected")}</button>}
-      {selected.size > 0 && <button onClick={handleQuickExtract}>{t("quickExtract")}</button>}
+      {(emptyArea || selected.size > 0) && (
+        <button onClick={!emptyArea ? handleExtractSelected : undefined} disabled={emptyArea}>
+          {t("extractSelected")}
+        </button>
+      )}
+      {(emptyArea || selected.size > 0) && (
+        <button onClick={!emptyArea ? handleQuickExtract : undefined} disabled={emptyArea}>
+          {t("quickExtract")}
+        </button>
+      )}
       <button onClick={handleExtractAll}>{t("extractAll")}</button>
-      {isSingleFile && (
+      {(emptyArea || isSingleFile) && (
         <>
           <hr className={styles.sep} />
-          <button onClick={handleOpenInApp}>{t("openInApp")}</button>
+          <button onClick={!emptyArea ? handleOpenInApp : undefined} disabled={emptyArea}>
+            {t("openInApp")}
+          </button>
         </>
       )}
       <hr className={styles.sep} />
-      {selected.size > 0 && <button onClick={handleCopyPath}>{t("copyPath")}</button>}
+      {(emptyArea || selected.size > 0) && (
+        <button onClick={handleCopyPathOrDir}>{t("copyPath")}</button>
+      )}
       <hr className={styles.sep} />
-      {selected.size > 0 && <button onClick={handleProperties}>{t("properties")}</button>}
+      {(emptyArea || selected.size > 0) && (
+        <button onClick={handlePropertiesOrDir}>{t("properties")}</button>
+      )}
     </div>,
     document.body,
   );

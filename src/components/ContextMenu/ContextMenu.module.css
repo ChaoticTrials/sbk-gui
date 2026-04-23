@@ -21,6 +21,11 @@
 .menu button:hover {
   background: var(--color-hover);
 }
+.menu button:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
 .sep {
   border: none;
   border-top: 1px solid var(--color-border);

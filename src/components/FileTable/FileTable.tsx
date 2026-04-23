@@ -20,6 +20,7 @@ export function FileTable() {
   const columnWidths = useSettingsStore((s) => s.columnWidths);
   const searchGlobal = useSettingsStore((s) => s.searchGlobal);
   const clearSelection = useSelectionStore((s) => s.clearSelection);
+  const setContextMenu = useUiStore((s) => s.setContextMenu);
 
   const tableWrapperRef = useRef<HTMLDivElement>(null);
   const [rubberBand, setRubberBand] = useState<{ startX: number; startY: number; curX: number; curY: number } | null>(null);
@@ -80,6 +81,12 @@ export function FileTable() {
   const gridTemplate = showCoordsColumn
     ? `${columnWidths.name}px ${columnWidths.type}px ${columnWidths.size}px ${columnWidths.modified}px ${coordsColWidth}px`
     : `${columnWidths.name}px ${columnWidths.type}px ${columnWidths.size}px ${columnWidths.modified}px`;
+
+  function handleBodyContextMenu(e: React.MouseEvent<HTMLDivElement>) {
+    if ((e.target as HTMLElement).closest("[data-path]")) return;
+    e.preventDefault();
+    setContextMenu({ x: e.clientX, y: e.clientY, emptyArea: true });
+  }
 
   // Task 4: deselect on click on empty space in the body
   function handleBodyMouseDown(e: React.MouseEvent<HTMLDivElement>) {
@@ -211,7 +218,7 @@ export function FileTable() {
             </div>
           )}
         </div>
-        <div className={styles.body} onMouseDown={handleBodyMouseDown}>
+        <div className={styles.body} onMouseDown={handleBodyMouseDown} onContextMenu={handleBodyContextMenu}>
           {rows.map((row) => (
             <FileRow key={row.path} node={row} allPaths={allPaths} gridTemplate={gridTemplate} showCoordsColumn={showCoordsColumn} />
           ))}
