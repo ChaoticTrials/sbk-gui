@@ -10,8 +10,14 @@ pub fn get_cli_path() -> Option<String> {
 
 #[tauri::command]
 pub fn get_version_info() -> (String, String) {
-    (
-        env!("CARGO_PKG_VERSION").to_string(),
-        env!("SBK_VERSION").to_string(),
-    )
+    let sbk_version = std::process::Command::new("sbk")
+        .arg("--version")
+        .output()
+        .ok()
+        .and_then(|o| String::from_utf8(o.stdout).ok())
+        .and_then(|s| s.split_whitespace().last().map(|v| v.trim().to_string()))
+        .filter(|v| !v.is_empty())
+        .unwrap_or_else(|| env!("SBK_VERSION").to_string());
+
+    (env!("CARGO_PKG_VERSION").to_string(), sbk_version)
 }
