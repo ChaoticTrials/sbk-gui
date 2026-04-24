@@ -40,11 +40,17 @@ Download the `.dmg` from the [Releases](https://github.com/ChaoticTrials/sbk-gui
 
 ## Building
 
-Requires [Rust](https://www.rust-lang.org/tools/install), [Node.js](https://nodejs.org/) ≥ 18, and [Tauri CLI v2](https://tauri.app/start/prerequisites/).
+Requires [Rust](https://www.rust-lang.org/tools/install), [Node.js](https://nodejs.org/) ≥ 24, and [Tauri CLI v2](https://tauri.app/start/prerequisites/).
 
 ```bash
 npm install
 npm run tauri build
+# installer/binary at: src-tauri/target/release/bundle/
+```
+
+Easier:
+```bash
+./build.sh
 # installer/binary at: src-tauri/target/release/bundle/
 ```
 
