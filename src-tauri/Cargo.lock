@@ -3420,9 +3420,9 @@ dependencies = [
 
 [[package]]
 name = "sbk"
-version = "0.2.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "14e1c85a23d5e8539fdbbc29a7be0412d02a7019fada6a58d5dc2877127229bb"
+checksum = "a4732363d3d4aa2679d90b3bc3cf53c9be3cb7cc720016ecdec88dee16c29a0f"
 dependencies = [
  "anyhow",
  "clap",
@@ -3434,6 +3434,7 @@ dependencies = [
  "ruzstd",
  "serde_json",
  "tar",
+ "tempfile",
  "thiserror 2.0.18",
  "time",
  "walkdir",
@@ -3445,7 +3446,7 @@ dependencies = [
 
 [[package]]
 name = "sbk-gui"
-version = "0.1.1"
+version = "0.2.0"
 dependencies = [
  "num_cpus",
  "open",
