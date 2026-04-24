@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { open } from "@tauri-apps/plugin-dialog";
 import { useArchiveStore } from "@/store/useArchiveStore";
 import { useNavStore } from "@/store/useNavStore";
 import { useSelectionStore } from "@/store/useSelectionStore";
@@ -10,10 +11,8 @@ export function useGlobalShortcuts() {
 
       if ((e.ctrlKey || e.metaKey) && e.key === "o") {
         e.preventDefault();
-        import("@tauri-apps/plugin-dialog").then(({ open }) => {
-          open({ filters: [{ name: "SBK Archive", extensions: ["sbk"] }] }).then((path) => {
-            if (path) useArchiveStore.getState().openArchive(path as string);
-          });
+        open({ filters: [{ name: "SBK Archive", extensions: ["sbk"] }] }).then((path) => {
+          if (path) useArchiveStore.getState().openArchive(path as string);
         });
       }
 
