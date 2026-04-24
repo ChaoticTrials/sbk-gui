@@ -26,11 +26,13 @@ export function ContextMenu() {
   useLayoutEffect(() => {
     if (!contextMenu || !menuRef.current) return;
     const { offsetWidth, offsetHeight } = menuRef.current;
-    // contextMenu.x/y are raw clientX/clientY — zoom is on a div wrapper, not html,
-    // so coordinates are already in viewport CSS pixels. No zoom division needed.
-    const x = Math.min(contextMenu.x / uiScale, window.innerWidth - offsetWidth - 4);
-    const y = Math.min(contextMenu.y / uiScale, window.innerHeight - offsetHeight - 4);
-    setAdjustedPos({ x, y });
+    const vw = window.innerWidth / uiScale;
+    const vh = window.innerHeight / uiScale;
+    const cx = contextMenu.x / uiScale;
+    const cy = contextMenu.y / uiScale;
+    const x = cx + offsetWidth + 4 > vw ? vw - offsetWidth - 4 : cx;
+    const y = cy + offsetHeight + 4 > vh ? cy - offsetHeight : cy;
+    setAdjustedPos({ x: Math.max(0, x), y: Math.max(0, y) });
   }, [contextMenu]);
 
   useEffect(() => {
