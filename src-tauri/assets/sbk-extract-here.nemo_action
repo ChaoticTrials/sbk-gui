@@ -1,0 +1,11 @@
+[Nemo Action]
+Name=Extract Here
+Name[de]=Hier entpacken
+Comment=Extract SBK archive contents to a subfolder
+Comment[de]=SBK-Archiv-Inhalte in Unterordner entpacken
+Exec=sbk-gui --extract-here %F
+Icon-Name=sbk-gui
+Selection=s
+Extensions=sbk;
+MimeTypes=application/x-sbk;
+Terminal=false

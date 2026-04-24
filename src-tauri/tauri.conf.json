@@ -26,7 +26,10 @@
     "targets": "all",
     "linux": {
       "deb": {
-        "depends": ["sbk"]
+        "depends": ["sbk"],
+        "files": {
+          "/usr/share/nemo/actions/sbk-extract-here.nemo_action": "assets/sbk-extract-here.nemo_action"
+        }
       }
     },
     "icon": [

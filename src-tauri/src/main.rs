@@ -2,5 +2,10 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    sbk_gui_lib::run()
+    let args: Vec<String> = std::env::args().collect();
+    if args.len() >= 3 && args[1] == "--extract-here" {
+        sbk_gui_lib::run_extract_here(&args[2]);
+        return;
+    }
+    sbk_gui_lib::run();
 }

@@ -51,6 +51,7 @@
   "properties": "Properties",
 
   "extracting": "Extracting\u2026",
+  "cancelling": "Cancelling\u2026",
   "decompressing": "Decompressing",
   "writing": "Writing",
   "extractedFiles": "Extracted {n} files",

@@ -1,6 +1,7 @@
 pub mod archive;
 pub mod cancel;
 pub mod extract;
+pub mod extract_here;
 pub mod open;
 pub mod system;
 pub mod verify;

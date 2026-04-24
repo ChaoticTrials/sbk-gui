@@ -51,6 +51,7 @@
   "properties": "Eigenschaften",
 
   "extracting": "Extrahiere\u2026",
+  "cancelling": "Wird abgebrochen\u2026",
   "decompressing": "Dekomprimiere",
   "writing": "Schreibe",
   "extractedFiles": "{n} Dateien extrahiert",

@@ -5,6 +5,7 @@ import { useSettingsStore } from "./store/useSettingsStore";
 import { EmptyState } from "./components/EmptyState/EmptyState";
 import { ArchiveView } from "./components/ArchiveView/ArchiveView";
 import { SettingsDialog } from "./components/SettingsDialog/SettingsDialog";
+import { ExtractHereView } from "./components/ExtractHereView/ExtractHereView";
 import { useMouseButtons } from "./hooks/useMouseButtons";
 import { useGlobalShortcuts } from "./hooks/useGlobalShortcuts";
 
@@ -13,22 +14,27 @@ export default function App() {
   const { loadSettings, uiScale } = useSettingsStore();
   const settingsOpen = useSettingsStore((s) => s.settingsOpen);
   const [previewScale, setPreviewScale] = useState(uiScale);
+  const [extractHerePath, setExtractHerePath] = useState<string | null | undefined>(undefined);
   useMouseButtons();
   useGlobalShortcuts();
 
   useEffect(() => {
-    loadSettings();
-    invoke<string | null>("get_cli_path").then((path) => {
-      if (path) useArchiveStore.getState().openArchive(path);
+    invoke<string | null>("get_extract_here_path").then((path) => {
+      setExtractHerePath(path);
+      if (!path) {
+        // Normal mode: load settings and open CLI-provided archive
+        loadSettings();
+        invoke<string | null>("get_cli_path").then((cliPath) => {
+          if (cliPath) useArchiveStore.getState().openArchive(cliPath);
+        });
+      }
     });
   }, []);
 
-  // Apply zoom via CSS variable on html element
   useEffect(() => {
     document.documentElement.style.setProperty("--ui-scale", String(previewScale));
   }, [previewScale]);
 
-  // Sync previewScale when the store changes externally (e.g. Ctrl+wheel)
   useEffect(() => {
     setPreviewScale(uiScale);
   }, [uiScale]);
@@ -52,15 +58,20 @@ export default function App() {
     return () => window.removeEventListener("wheel", handleWheel);
   }, []);
 
+  // Still detecting mode
+  if (extractHerePath === undefined) return null;
+
+  // Extract-here mode: show only the progress window
+  if (extractHerePath !== null) return <ExtractHereView archivePath={extractHerePath} />;
+
+  // Normal mode
   return (
     <>
       {info ? <ArchiveView /> : <EmptyState />}
       {settingsOpen && (
         <SettingsDialog
           onPreviewScale={setPreviewScale}
-          onCancel={() => {
-            setPreviewScale(uiScale);
-          }}
+          onCancel={() => setPreviewScale(uiScale)}
         />
       )}
     </>
