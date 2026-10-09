@@ -20,7 +20,9 @@ pub async fn extract_here_with_progress(
 ) -> Result<(u64, String), String> {
     let archive_path = state.0.clone().ok_or("not in extract-here mode")?;
     let archive = std::path::Path::new(&archive_path);
-    let parent = archive.parent().ok_or("cannot determine parent directory")?;
+    let parent = archive
+        .parent()
+        .ok_or("cannot determine parent directory")?;
     let stem = archive.file_stem().ok_or("cannot determine archive name")?;
     let output_dir = parent.join(stem);
     let newly_created = !output_dir.exists();
@@ -54,7 +56,11 @@ pub async fn extract_here_with_progress(
             move |phase, completed, total| {
                 let _ = app.emit(
                     "extraction-progress",
-                    ExtractionProgress { phase: phase.to_string(), completed, total },
+                    ExtractionProgress {
+                        phase: phase.to_string(),
+                        completed,
+                        total,
+                    },
                 );
                 !cancel_flag_cb.load(Ordering::Relaxed)
             },

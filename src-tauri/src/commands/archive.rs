@@ -19,9 +19,11 @@ pub fn open_archive(
     let header = read_header(&mut f).map_err(|e| e.to_string())?;
     let codec = codec::from_algorithm(header.algorithm);
 
+    let frame_size = header.frame_size_bytes;
+
     f.seek(SeekFrom::Start(header.frame_dir_offset))
         .map_err(|e| e.to_string())?;
-    let frame_dir = read_frame_dir(&mut f).map_err(|e| e.to_string())?;
+    let frame_dir = read_frame_dir(&mut f, frame_size).map_err(|e| e.to_string())?;
 
     f.seek(SeekFrom::Start(header.index_offset))
         .map_err(|e| e.to_string())?;
