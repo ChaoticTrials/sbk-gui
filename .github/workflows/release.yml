@@ -75,18 +75,18 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  apt-repo:
+  package-repo:
     needs: release
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
-      - name: Checkout apt-repo
+      - name: Checkout package-repo
         uses: actions/checkout@v6
         with:
           repository: ChaoticTrials/package-repo
-          token: ${{ secrets.APT_REPO_TOKEN }}
-          path: apt-repo
+          token: ${{ secrets.PACKAGE_REPO_TOKEN }}
+          path: package-repo
 
       - name: Install aptly
         run: |
@@ -109,13 +109,13 @@ jobs:
 
       - name: Build apt repo with aptly
         run: |
-          mkdir -p apt-repo/public
+          mkdir -p package-repo/public
           cat > ~/.aptly.conf <<EOF
           {
-            "rootDir": "${GITHUB_WORKSPACE}/apt-repo/.aptly",
+            "rootDir": "${GITHUB_WORKSPACE}/package-repo/.aptly",
             "FileSystemPublishEndpoints": {
               "apt-repo": {
-                "rootDir": "${GITHUB_WORKSPACE}/apt-repo/public",
+                "rootDir": "${GITHUB_WORKSPACE}/package-repo/public",
                 "linkMethod": "copy"
               }
             }
@@ -136,8 +136,8 @@ jobs:
             stable \
             filesystem:apt-repo:deb
 
-      - name: Commit and push updated apt-repo
-        working-directory: apt-repo
+      - name: Commit and push updated package-repo
+        working-directory: package-repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
